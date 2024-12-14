@@ -119,7 +119,7 @@ function SignupForm() {
         <div className="flex gap-x-4">
           <label style={{position:"relative"}}>
             <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-gray-200">
-              First Name <sup className="text-pink-500">*</sup>
+              First Name <sup className="text-pink-5dc00">*</sup>
             </p>
             <FaUser style={{color:"grey",position:"absolute",top:"calc(49%)",left:"2.85%",fontSize:"20px"}}/>
             <input

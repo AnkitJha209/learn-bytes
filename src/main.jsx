@@ -13,6 +13,12 @@ import HomePage from './pages/HomePage.jsx'
 import LogIn from './pages/LogIn.jsx'
 import { Toaster } from "react-hot-toast";
 import VerifyEmail from './pages/VerifyEmail.jsx'
+import PrivateRoute from './components/core/auth/PrivateRoute.jsx'
+import DashBoard from './pages/DashBoard.jsx'
+import MyProfile from './components/core/dashboard/MyProfile.jsx'
+import Setting from './components/core/dashboard/Setting.jsx'
+import EditProfile from './components/core/setting/EditProfile.jsx'
+import DeleteAccount from './components/core/setting/DeleteAccount.jsx'
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<App/>}>
@@ -23,6 +29,13 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='sign-up' element={<OpenRoute><SignUp/></OpenRoute>}/>
     <Route path='log-in' element={<OpenRoute><LogIn/></OpenRoute>}/>
     <Route path='verify-email' element={<OpenRoute><VerifyEmail/></OpenRoute>}/>
+    <Route path='dashboard/' element={<PrivateRoute><DashBoard/></PrivateRoute>}>
+      <Route path='my-profile' element={<MyProfile/>} />
+      <Route path='setting/' element={<Setting/>}>
+        <Route path='edit-profile' element={<EditProfile/>}/>
+        <Route path='delete-account' element={<DeleteAccount/>}/>
+      </Route>
+    </Route>
   </Route>
 ))
 

@@ -70,7 +70,7 @@ export function signUp(
         throw new Error(response.data.message)
       }
       toast.success("Signup Successful")
-      navigate("/log- in")
+      navigate("/log-in")
     } catch (error) {
       console.log("SIGNUP API ERROR............", error)
       toast.error("Signup Failed")
@@ -98,15 +98,15 @@ export function login(email, password, navigate) {
       }
 
       toast.success("Login Successful")
-      dispatch(setToken(response.data.token))
-      const userImage = response.data?.user?.image
-        ? response.data.user.image
-        : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.firstName} ${response.data.user.lastName}`
-      dispatch(setUser({ ...response.data.user, image: userImage }))
+      dispatch(setToken(response.data.data.token))
+      const userImage = response.data?.data?.image
+        ? response.data.data.image
+        : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.data.firstName} ${response.data.user.lastName}`
+      dispatch(setUser({ ...response.data.data, image: userImage }))
       
-      localStorage.setItem("token", JSON.stringify(response.data.token))
-      localStorage.setItem("user", JSON.stringify(response.data.user))
-      navigate("/dashboard/my-profile")
+      localStorage.setItem("token", JSON.stringify(response.data.data.token))
+      localStorage.setItem("user", JSON.stringify(response.data.data))
+      navigate("/")
     } catch (error) {
       console.log("LOGIN API ERROR............", error)
       toast.error("Login Failed")
