@@ -13,25 +13,10 @@ const NavBar = () => {
 
     const { token } = useSelector((state) => state.auth);
     const { user } = useSelector((state) => state.profile);
-    const { items } = useSelector((state) => state.cart);
+    // const { items } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-
-    // const [subLinks, setSubLinks] = useState([]);
-
-    // const fetchLinks = async () => {
-    //   try {
-    //     const result = await apiConnector("GET", courseEndpoints.GET_ALL_COURSE_API);
-    //     console.log(result);
-    //     setSubLinks(result.data.allCategory);
-    //   } catch (err) {
-    //     console.log("Could not get category list");
-    //   }
-    // };
-    // useEffect(() => {
-    //   fetchLinks();
-    // }, []);
   return (
     <nav className="bg-teal-900 text-white sticky top-0 z-50">
       <div className="container mx-auto px-6">
@@ -104,7 +89,7 @@ const NavBar = () => {
                   <NavLink to='cart' className="bg-emerald-500 text-lg font-medium hover:bg-emerald-600 px-5 py-2 rounded-lg transition-colors">
                     <FaCartShopping />
                   </NavLink>
-                  <NavLink onClick={handleClick}  className="bg-white text-lg font-medium text-emerald-500 hover:bg-emerald-600 hover:text-white px-2 py-2 rounded-full transition-colors">
+                  <NavLink className="bg-white text-lg font-medium text-emerald-500 hover:bg-emerald-600 hover:text-white px-2 py-2 rounded-full transition-colors">
                     <img src={user.image} alt="" className='w-[40px] h-[40px] rounded-full'/>
                   </NavLink>
                 </>

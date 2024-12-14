@@ -102,14 +102,14 @@ export function login(email, password, navigate) {
       const userImage = response.data?.data?.image
         ? response.data.data.image
         : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.data.firstName} ${response.data.user.lastName}`
+      navigate("")
       dispatch(setUser({ ...response.data.data, image: userImage }))
-      
       localStorage.setItem("token", JSON.stringify(response.data.data.token))
       localStorage.setItem("user", JSON.stringify(response.data.data))
-      navigate("/")
     } catch (error) {
       console.log("LOGIN API ERROR............", error)
       toast.error("Login Failed")
+      navigate('/sign-up')
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)
