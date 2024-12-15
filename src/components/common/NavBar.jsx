@@ -14,6 +14,7 @@ const NavBar = () => {
     const { token } = useSelector((state) => state.auth);
     const { user } = useSelector((state) => state.profile);
     // const { items } = useSelector((state) => state.cart);
+    const {totalItems} = useSelector(state => state.cart)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -44,8 +45,9 @@ const NavBar = () => {
                 </>
               ) : (
                 <>
-                  <NavLink to='cart' className="bg-emerald-500 text-lg font-medium hover:bg-emerald-600 px-5 py-2 rounded-lg transition-colors">
+                  <NavLink to='cart' className="bg-emerald-500 relative text-lg font-medium hover:bg-emerald-600 px-5 py-2 rounded-lg transition-colors">
                     <FaCartShopping />
+                    <div className='absolute top-[-40%] p-1 w-[25px] text-center h-[25px] rounded-full right-[-10%] bg-red-500'><sup className='z-50 text-md'>{totalItems}</sup></div>
                   </NavLink>
                   <NavLink className="bg-white group text-lg font-medium text-emerald-500 hover:bg-emerald-600 hover:text-white px-2 py-2 rounded-full transition-colors">
                     <img src={user.image} alt="" className='w-[40px] h-[40px] rounded-full'/>
@@ -86,10 +88,12 @@ const NavBar = () => {
                 </>
               ) : (
                 <>
-                  <NavLink to='cart' className="bg-emerald-500 text-lg font-medium hover:bg-emerald-600 px-5 py-2 rounded-lg transition-colors">
+                  <NavLink to='cart' className="bg-emerald-500 w-[100px] flex items-center justify-center relative text-lg font-medium hover:bg-emerald-600 px-5 py-2 rounded-lg transition-colors">
                     <FaCartShopping />
+                    <div className='absolute top-[-40%] p-1 w-[25px] text-center h-[25px] rounded-full right-[-10%] bg-red-500'><sup className='z-50 text-md'>{totalItems}</sup></div>
+
                   </NavLink>
-                  <NavLink className="bg-white text-lg font-medium text-emerald-500 hover:bg-emerald-600 hover:text-white px-2 py-2 rounded-full transition-colors">
+                  <NavLink className="bg-white w-[100px] flex items-center justify-center text-lg font-medium text-emerald-500 hover:bg-emerald-600 hover:text-white px-2 py-2 rounded-full transition-colors">
                     <img src={user.image} alt="" className='w-[40px] h-[40px] rounded-full'/>
                   </NavLink>
                 </>

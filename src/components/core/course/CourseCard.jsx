@@ -21,7 +21,7 @@ const CourseCard = ({course}) => {
         dispatch(addToCart(course))
     }
   return (
-    <div onClick={()=>handleClick(course)} className="bg-teal-800/30 hover:cursor-pointer col-span-4 row-span-9 flex flex-col gap-1 p-6 rounded-lg backdrop-blur-sm border border-teal-700/50 hover:transform hover:scale-105 transition-all">
+    <div onClick={()=>handleClick(course)} className="bg-teal-800/30 hover:cursor-pointer col-span-12  sm:col-span-4 row-span-12 sm:row-span-9 flex flex-col gap-1 p-6 rounded-lg backdrop-blur-sm border border-teal-700/50 hover:transform hover:scale-105 transition-all">
           <div className="text-emerald-400 mb-4">
             <img src={course.thumbnail} alt="course-img" className='rounded-lg' />
           </div>

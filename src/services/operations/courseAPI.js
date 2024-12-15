@@ -31,7 +31,7 @@ export const getCourseDetails = (courseId) => {
             const res = await apiConnector("POST", courseEndpoints.COURSE_DETAILS_API, {
                 courseId
             })
-            console.log("API Response", res)
+            console.log("API Response............", res)
             dispatch(getDetails(res.data.data))
             toast.success("Course Details Fetched Successfully")
         }catch(err){

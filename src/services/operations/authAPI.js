@@ -109,7 +109,7 @@ export function login(email, password, navigate) {
     } catch (error) {
       console.log("LOGIN API ERROR............", error)
       toast.error("Login Failed")
-      navigate('/sign-up')
+      navigate('/dashboard/my-profile')
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)

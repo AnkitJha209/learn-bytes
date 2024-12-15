@@ -20,11 +20,13 @@ import Setting from './components/core/dashboard/Setting.jsx'
 import EditProfile from './components/core/setting/EditProfile.jsx'
 import DeleteAccount from './components/core/setting/DeleteAccount.jsx'
 import CoursePage from './pages/CoursePage.jsx'
+import CartPage from './pages/CartPage.jsx'
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<App/>}>
     <Route path='' element={<HomePage/>}/>
     <Route path='courses' element={<Courses/>}/>
+    <Route path='cart' element={<PrivateRoute><CartPage/></PrivateRoute>}/>
     <Route path='courses/:id' element={<CoursePage/>}/>
     <Route path='about-us' element={<AboutUs/>}/>
     <Route path='contact-us' element={<ContactUs/>}/>
