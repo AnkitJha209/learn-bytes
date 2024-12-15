@@ -10,18 +10,6 @@ const CoursePage = () => {
     const dispatch = useDispatch()
     
     useEffect(()=> {
-        // const getCourseDetail = async (courseId) => {
-        //     try {
-        //         const res = await apiConnector("POST", courseEndpoints.COURSE_DETAILS_API, {
-        //             courseId,
-        //         });
-        //         console.log(res.data.data);
-        //     } catch (error) {
-
-        //         console.error("Error fetching course details:", error);
-        //     }
-        // };
-        // getCourseDetail(id);
         dispatch(getCourseDetails(id))
     },[id])
     const {courseDetails} = useSelector(state => state.course)

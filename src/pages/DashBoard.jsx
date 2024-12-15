@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 const DashBoard = () => {
   return (
-    <div>
+    <div className='grid grid-cols-12'>
       <SideBar/>
       <Outlet/>
     </div>

@@ -33,9 +33,9 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='verify-email' element={<OpenRoute><VerifyEmail/></OpenRoute>}/>
     <Route path='dashboard/' element={<PrivateRoute><DashBoard/></PrivateRoute>}>
       <Route path='my-profile' element={<MyProfile/>} />
-      <Route path='setting/' element={<Setting/>}>
-        <Route path='edit-profile' element={<EditProfile/>}/>
-        <Route path='delete-account' element={<DeleteAccount/>}/>
+      <Route path='edit-profile' element={<EditProfile/>}/>
+      <Route path='delete-account' element={<DeleteAccount/>}/>
+      <Route path='setting' element={<Setting/>}>
       </Route>
     </Route>
   </Route>
