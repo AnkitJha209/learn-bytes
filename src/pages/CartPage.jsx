@@ -6,6 +6,7 @@ import { toast } from 'react-hot-toast';
 const CartPage = () => {
   const dispatch = useDispatch();
   const { cart, total, totalItems } = useSelector((state) => state.cart);
+  console.log(cart)
 
   const handleRemove = (courseId) => {
     dispatch(removeFromCart(courseId));
@@ -17,7 +18,8 @@ const CartPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-10 px-5">
+    <div>
+      <div className="min-h-screen bg-gray-900 text-white py-10 px-5">
       <div className="max-w-6xl mx-auto bg-white text-gray-900 shadow-lg rounded-lg p-6">
         <h1 className="text-3xl font-bold mb-6 text-gray-900">Your Cart</h1>
 
@@ -75,6 +77,7 @@ const CartPage = () => {
           </>
         )}
       </div>
+    </div>
     </div>
   );
 };

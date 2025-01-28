@@ -51,7 +51,7 @@ const NavBar = () => {
                   </NavLink>
                   <NavLink className="bg-white group text-lg font-medium text-emerald-500 hover:bg-emerald-600 hover:text-white px-2 py-2 rounded-full transition-colors">
                     <img src={user.image} alt="" className='w-[40px] h-[40px] rounded-full'/>
-                      <div className="invisible absolute left-[85%] top-[40%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col gap-2 rounded-lg bg-emerald-500 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
+                    <div className="invisible absolute left-[85%] top-[40%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col gap-2 rounded-lg bg-emerald-500 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
                       <NavLink to='dashboard/my-profile' className={({isActive}) => `${isActive? 'bg-blue-700': 'bg-blue-500'} rounded-lg px-3 py-1 text-center`}>My Profile</NavLink>
                       <button onClick={()=> dispatch(logout(navigate))} className='bg-red-500 text-white rounded-lg px-3 py-1 text-center'>Log Out</button>
                     </div>

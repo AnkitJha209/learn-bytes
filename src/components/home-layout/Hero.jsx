@@ -1,8 +1,11 @@
 import React from 'react'
 import { GraduationCap, BookOpen, Users, Award } from 'lucide-react';
 import { StatsCard } from '../ui/StatsCard';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Hero = () => {
+  const {token} = useSelector(state => state.auth)
   return (
     <div className="bg-gradient-to-br from-teal-900 via-emerald-900 to-green-900 text-white">
       <div className="container mx-auto px-6 py-20">
@@ -15,12 +18,18 @@ const Hero = () => {
               Master in-demand skills with our expert-led courses and join a thriving community of learners.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold transition-all">
-                Start Learning
-              </button>
-              <button className="border-2 border-emerald-400 hover:bg-emerald-800 px-8 py-3 rounded-lg font-semibold transition-all">
+              {
+                token===null? (<NavLink to='/log-in' className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold transition-all">
+                  Start Learning
+                </NavLink>):(
+                  <NavLink to='/courses' className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold transition-all">
+                  Start Learning
+                </NavLink>
+                )
+              }
+              <NavLink to='/courses' className="border-2 border-emerald-400 hover:bg-emerald-800 px-8 py-3 rounded-lg font-semibold transition-all">
                 View Courses
-              </button>
+              </NavLink>
             </div>
           </div>
           <div className="lg:w-1/2 mt-12 lg:mt-0">
