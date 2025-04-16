@@ -9,7 +9,7 @@ function Template({ title, description1, description2, image, formType }) {
   const { loading } = useSelector((state) => state.auth);
 
   return (
-    <div className="grid place-items-center pt-10 bg-gradient-to-br from-teal-900 via-emerald-900 to-green-900 text-white">
+    <div className="grid place-items-center pt-10 bg-gradient-to-br min-h-screen from-teal-900 via-emerald-900 to-green-900 text-white">
       {loading ? (
         <div className="spinner"></div>
       ) : (
@@ -29,7 +29,7 @@ function Template({ title, description1, description2, image, formType }) {
           </div>
 
           {/* Image Section */}
-          <div className="relative mx-auto w-11/12 max-w-[450px] md:mx-0">
+          <div className="relative mx-auto w-11/12 max-w-[450px] hidden sm:inline sm:mx-0">
             <img
               src={image}
               alt="Students"
