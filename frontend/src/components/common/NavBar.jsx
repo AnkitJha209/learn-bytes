@@ -17,8 +17,8 @@ const NavBar = () => {
     const {totalItems} = useSelector(state => state.cart)
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {accountType} = user
-    if(accountType === undefined || accountType === 'Student') {
+    const accountType = user?.accountType;
+    if (accountType === undefined || accountType === 'Student') {
       return (
         <nav className="bg-teal-900 text-white sticky top-0 z-50">
       <div className="container mx-auto px-6">
